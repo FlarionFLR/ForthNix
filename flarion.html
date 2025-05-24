@@ -379,6 +379,38 @@
     color: #c0c0c0;
     font-style: italic;
   }
+
+  .news-section {
+  width: 100%;
+  max-width: 960px;
+  background: #fff;
+  padding: 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  margin-bottom: 2rem;
+}
+.news-section h2 {
+  margin-top: 0;
+  color: var(--gradient-start);
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+.news-item {
+  margin-bottom: 1.2rem;
+}
+.news-item h3 {
+  margin-bottom: 0.3rem;
+  color: #4e54c8;
+}
+.news-item .date {
+  font-size: 0.9rem;
+  color: #888;
+  margin-bottom: 0.4rem;
+}
+.news-item .content {
+  font-size: 1rem;
+  color: #333;
+}
 </style>
 </head>
 <body>
@@ -388,7 +420,7 @@
 </header>
 <main>
   <div id="filter-container">
-    <label for="username-filter">Filter Username:</label>
+    <label for="username-filter">Username:</label>
     <input type="text" id="username-filter" placeholder="Cari username..." aria-label="Filter username" />
   </div>
   <div class="table-wrapper">
@@ -445,6 +477,29 @@
       </tbody>
     </table>
   </div>
+
+  <!-- Bagian Berita FLR -->
+<section class="news-section">
+  <h2>Berita Terbaru FLR</h2>
+
+  <article class="news-item">
+    <h3>Pembaruan Harga FLR Tetap Stabil</h3>
+    <p class="date">24 Mei 2025</p>
+    <p class="content">Harga FLR saat ini masih berada di angka Rp5.000. Nilai ini akan terus dipantau dan dapat berubah mengikuti perkembangan pasar internal Flarion.</p>
+  </article>
+
+  <article class="news-item">
+    <h3>Penambahan Fitur Withdraw via WhatsApp</h3>
+    <p class="date">24 Mei 2025</p>
+    <p class="content">Kini pengguna dapat melakukan withdraw langsung melalui tombol WhatsApp yang tersedia. Fitur ini ditujukan untuk mempercepat proses penarikan FLR.</p>
+  </article>
+
+  <article class="news-item">
+    <h3>FLR Ranking Pertama: JovirstK-ID</h3>
+    <p class="date">14 Mei 2025</p>
+    <p class="content">Selamat kepada JovirstK-ID yang menjadi pengguna dengan jumlah FLR terbanyak saat ini, yaitu 20 FLR atau senilai Rp100.000.</p>
+  </article>
+</section>
   
   <div id="buttons-container">
     <div class="action-group">
