@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   <!-- Meta tag Open Graph (Facebook, WhatsApp, LINE, dll) -->
   <meta property="og:title" content="Flarion - Dompet Kripto Lokal" />
   <meta property="og:description" content="Gabung bersama Flarion (FLR) dan mulai transaksi digital yang aman dan cepat!" />
@@ -419,6 +419,11 @@
   <p>User FLR List</p>
 </header>
 <main>
+
+  <div style="width:100%; max-width:960px; margin-bottom:2rem;">
+  <canvas id="flrChart" height="300"></canvas>
+  </div>
+  
   <div id="filter-container">
     <label for="username-filter">May 24, 2025</label>
     <input type="text" id="username-filter" placeholder="Cari username..." aria-label="Filter username" />
@@ -635,6 +640,49 @@
       closeAllOptions();
     }
   });
+
+
+
+  // Grafik Harga FLR Palsu (Simulasi)
+const ctx = document.getElementById('flrChart').getContext('2d');
+const flrChart = new Chart(ctx, {
+  type: 'line',
+  data: {
+    labels: ['Hari 1', 'Hari 2', 'Hari 3', 'Hari 4', 'Hari 5', 'Hari 6', 'Hari 7', 'Hari 8', 'Hari 9', 'Hari 10'],
+    datasets: [{
+      label: 'Harga FLR (Rp)',
+      data: [5000, 5200, 5500, 5800, 6100, 6500, 7000, 7600, 8500, 10000],
+      fill: true,
+      borderColor: '#4e54c8',
+      backgroundColor: 'rgba(143, 148, 251, 0.2)',
+      pointBackgroundColor: '#4e54c8',
+      tension: 0.4
+    }]
+  },
+  options: {
+    responsive: true,
+    plugins: {
+      legend: {
+        display: true
+      },
+      tooltip: {
+        mode: 'index',
+        intersect: false
+      }
+    },
+    scales: {
+      y: {
+        beginAtZero: false,
+        ticks: {
+          callback: function(value) {
+            return 'Rp' + value.toLocaleString();
+          }
+        }
+      }
+    }
+  }
+});
+  
 </script>
 </body>
 </html>
