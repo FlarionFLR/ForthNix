@@ -644,22 +644,19 @@
     }
   });
 
-
-
-  // Grafik Harga FLR (Simulasi)
 const ctx = document.getElementById('flrChart').getContext('2d');
 const flrChart = new Chart(ctx, {
   type: 'line',
   data: {
-    labels: ['Tanggal 2', 'Tanggal 3', 'Tanggal 7', 'Tanggal 10', 'Tanggal 12', 'Tanggal 15', 'Tanggal 17', 'Tanggal 20', 'Tanggal 23', 'Tanggal 25'],
+    labels: ['Hari 1', 'Hari 2', 'Hari 3', 'Hari 4', 'Hari 5', 'Hari 6', 'Hari 7', 'Hari 8', 'Hari 9', 'Hari 10'],
     datasets: [{
       label: 'Harga FLR (Rp)',
-      data: [500, 1000, 2100, 2500, 500, 2700, 3500, 6500, 7000, 5000],
+      data: [5000, 5200, 5500, 5800, 6100, 6500, 7000, 7600, 8500, 10000],
       fill: true,
-      borderColor: '#e74c3c', // garis merah
-      backgroundColor: 'rgba(231, 76, 60, 0.2)', // isi area merah transparan
-      pointBackgroundColor: '#e74c3c', // titik-titik merah
-      tension: 0
+      borderColor: '#4e54c8',
+      backgroundColor: 'rgba(143, 148, 251, 0.2)',
+      pointBackgroundColor: '#4e54c8',
+      tension: 0.4
     }]
   },
   options: {
