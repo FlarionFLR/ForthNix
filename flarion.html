@@ -428,7 +428,7 @@
   </div>
   
   <div id="filter-container">
-    <label for="username-filter">May 24, 2025</label>
+    <label for="username-filter">May 26, 2025</label>
     <input type="text" id="username-filter" placeholder="Cari username..." aria-label="Filter username" />
   </div>
   <div class="table-wrapper">
@@ -644,27 +644,36 @@
     }
   });
 
+// Grafik Harga FLR  (Simulasi Pump & Dump)
 const ctx = document.getElementById('flrChart').getContext('2d');
 const flrChart = new Chart(ctx, {
   type: 'line',
   data: {
-    labels: ['Hari 1', 'Hari 2', 'Hari 3', 'Hari 4', 'Hari 5', 'Hari 6', 'Hari 7', 'Hari 8', 'Hari 9', 'Hari 10'],
+    labels: [
+      '01/05/25', '02/05/25', '03/05/25', '04/05/25', '05/05/25',
+      '06/05/25', '07/05/25', '08/05/25', '09/05/25', '10/05/25',
+      '11/05/25', '12/05/25', '13/05/25', '14/05/25', '15/05/25',
+      '16/05/25', '17/05/25', '18/05/25', 'Hari ini'
+    ],
     datasets: [{
       label: 'Harga FLR (Rp)',
-      data: [5000, 5200, 5500, 5800, 6100, 6500, 7000, 7600, 8500, 10000],
+      data: [
+        4500, 6000, 10000, 15000, 20000,
+        5000, 1000, 35000, 40000, 50000,
+        60000, 80000, 100000, 70000, 50000,
+        30000, 40000, 12000, 5000, 5000
+      ],
       fill: true,
-      borderColor: '#4e54c8',
-      backgroundColor: 'rgba(143, 148, 251, 0.2)',
-      pointBackgroundColor: '#4e54c8',
-      tension: 0.4
+      borderColor: '#d63031',
+      backgroundColor: 'rgba(214, 48, 49, 0.15)',
+      pointBackgroundColor: '#d63031',
+      tension: 0
     }]
   },
   options: {
     responsive: true,
     plugins: {
-      legend: {
-        display: true
-      },
+      legend: { display: true },
       tooltip: {
         mode: 'index',
         intersect: false
@@ -674,14 +683,13 @@ const flrChart = new Chart(ctx, {
       y: {
         beginAtZero: false,
         ticks: {
-          callback: function(value) {
-            return 'Rp' + value.toLocaleString();
-          }
+          callback: value => 'Rp' + value.toLocaleString()
         }
       }
     }
   }
 });
+       
   
 </script>
 </body>
