@@ -690,6 +690,11 @@ const flrChart = new Chart(ctx, {
   }
 });
 
+const totalFLRCanvas = document.createElement('canvas');
+totalFLRCanvas.id = 'totalFLRChart';
+totalFLRCanvas.height = 300;
+document.querySelector('main').insertBefore(totalFLRCanvas, document.getElementById('filter-container'));
+
 const totalFLRChart = new Chart(totalFLRCanvas.getContext('2d'), {
   type: 'line',
   data: {
