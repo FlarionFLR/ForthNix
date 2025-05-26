@@ -465,8 +465,8 @@
         </tr>
         <tr>
           <td>WilliamND-ID</td>
-          <td>🪙3</td>
-          <td>Rp15.000</td>
+          <td>🪙0</td>
+          <td>Rp0</td>
           <td>#4</td>
         </tr>
         <tr>
@@ -689,7 +689,50 @@ const flrChart = new Chart(ctx, {
     }
   }
 });
-       
+
+const totalFLRChart = new Chart(totalFLRCanvas.getContext('2d'), {
+  type: 'line',
+  data: {
+    labels: [
+      '01/05/25', '02/05/25', '03/05/25', '04/05/25', '05/05/25',
+      '06/05/25', '07/05/25', '08/05/25', '09/05/25', '10/05/25',
+      '11/05/25', '12/05/25', '13/05/25', '14/05/25', '15/05/25',
+      '16/05/25', '17/05/25', '18/05/25', 'Hari ini'
+    ],
+    datasets: [{
+      label: 'Index FLR (Rp)',
+      data: [
+        15000, 20000, 15000, 5000, 30000,
+        55000, 25000, 125000, 50000, 85000,
+        105000, 85000, 55000, 75000, 100000,
+        150000, 210000, 210000, 195000
+      ],
+      fill: true,
+      borderColor: '#2ecc71',
+backgroundColor: 'rgba(46, 204, 113, 0.2)',
+pointBackgroundColor: '#2ecc71',
+      tension: 0
+    }]
+  },
+  options: {
+    responsive: true,
+    plugins: {
+      legend: { display: true },
+      tooltip: {
+        mode: 'index',
+        intersect: false
+      }
+    },
+    scales: {
+      y: {
+        beginAtZero: true,
+        ticks: {
+          callback: value => 'Rp' + value.toLocaleString()
+        }
+      }
+    }
+  }
+});
   
 </script>
 </body>
